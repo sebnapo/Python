@@ -1,7 +1,7 @@
-import Ex8
+import ex8
 
 def palindromes():
-    liste = Ex8.rempl()
+    liste = ex8.rempl()
     n = len(liste)
     listePal = []
     for i in range(n):

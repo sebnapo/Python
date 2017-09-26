@@ -1,7 +1,7 @@
-import Ex8
+import ex8
 
 def inverse():
-    liste = Ex8.rempl()
+    liste = ex8.rempl()
     #print(liste)
     listInv = []
     n = len(liste)
@@ -10,6 +10,3 @@ def inverse():
     return(liste, listInv)
 
 print(inverse())
-
-
-
