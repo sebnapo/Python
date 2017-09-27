@@ -8,10 +8,13 @@ def NbChiffres(n,compteur = 1,base = 10):
 
 
 
-def convert(n,base,res = ""):
+def convert(n,base):
     if(n // base == 0):
-        return res + str((n % base))
+        print (n % base)
     else:
-        return convert(n//base,base,(str((n//base) % base) + res ))
+        print (n % base)
+        convert(n//base,base)
 
-print(convert(107,2))
+
+
+convert(107,2)
