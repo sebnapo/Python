@@ -1,9 +1,17 @@
-def NbChiffres(n,compteur = 1):
+def NbChiffres(n,compteur = 1,base = 10):
 
-    if(n // 10 == 0):
+    if(n // base == 0):
         return(compteur)
     else:
-        return NbChiffres(n//10,compteur+1)
+        return NbChiffres(n//base,compteur+1,base)
 
 
-print("Nombre de chiffre" + NbChiffres(1000))
+
+
+def convert(n,base,res = ""):
+    if(n // base == 0):
+        return res + str((n % base))
+    else:
+        return convert(n//base,base,(str((n//base) % base) + res ))
+
+print(convert(107,2))
