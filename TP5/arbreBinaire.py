@@ -182,6 +182,33 @@ def rechercheNodeIteratif(arbre, val):
 
     return(trouve)
 
+def affichageCroissant(arbre):
+    affichageNoeudCroissant(arbre.racine)
+
+def affichageNoeudCroissant(noeud):
+    if(noeud != None):
+        affichageNoeudCroissant(noeud.gauche)
+        if(noeud.gauche != None):
+            print(",")
+        print(str(noeud.val))
+        if(noeud.droite != None):
+            print(",")
+        affichageNoeudCroissant(noeud.droite)
+
+
+def affichageDecroissant(arbre):
+    affichageNoeudDecroissant(arbre.racine)
+
+def affichageNoeudDecroissant(noeud):
+    if(noeud != None):
+        affichageNoeudDecroissant(noeud.droite)
+        if(noeud.droite != None):
+            print(",")
+        print(str(noeud.val))
+        if(noeud.gauche != None):
+            print(",")
+        affichageNoeudDecroissant(noeud.gauche)
+
 
 InsertionAbr(a,1)
 InsertionAbrIteratif(a,0)
@@ -190,3 +217,7 @@ print("recherche recursive :")
 print(RechercheAbr(a,12))
 print("Recherche itérative :")
 print(rechercheNodeIteratif(a,12))
+print("Affichage croissant :")
+affichageCroissant(a)
+print("Affichage decroissant :")
+affichageDecroissant(a)
