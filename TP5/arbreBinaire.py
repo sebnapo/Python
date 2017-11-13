@@ -150,23 +150,21 @@ def InsertionAbrIteratif(arbre,val):
 
 def RechercheAbr(arbre,val):
     res = RechercheAbrRecursif(arbre.racine,val)
-    print(res)
     return res
 
-def RechercheAbrRecursif(node,val,find=False):
+
+def RechercheAbrRecursif(node,val):
+    trouve = False
     if (node == None):
-        print("1")
-        return find
-    if(node.val == val):
-        print("2")
-        find = True
-    if (node.val >= val):
-        print("3")
-        RechercheAbrRecursif(node.gauche,val,find)
+        return trouve
+    elif(node.val == val):
+        trouve = True
+        return trouve
+    elif (node.val >= val):
+        trouve = RechercheAbrRecursif(node.gauche,val)
     elif (node.val <= val):
-        print("4")
-        RechercheAbrRecursif(node.droite,val,find)
-    print(find)
+        trouve = RechercheAbrRecursif(node.droite,val)
+    return trouve
 
 
 def rechercheNodeIteratif(arbre, val):
