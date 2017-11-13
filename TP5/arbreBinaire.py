@@ -169,8 +169,26 @@ def RechercheAbrRecursif(node,val,find=False):
     print(find)
 
 
+def rechercheNodeIteratif(arbre, val):
+
+    node = arbre.racine
+    trouve = False
+
+    while((node != None) and (trouve == False)):
+        if (node.val == val):
+            trouve = True
+        elif (node.val > val):
+            node = node.gauche
+        else:
+            node = node.droite
+
+    return(trouve)
+
+
 InsertionAbr(a,1)
 InsertionAbrIteratif(a,0)
 afficherArbre(a.racine)
 print("recherche recursive :")
 print(RechercheAbr(a,12))
+print("Recherche itérative :")
+print(rechercheNodeIteratif(a,12))
